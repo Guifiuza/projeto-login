@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/*#0D1A60
+  #0858A3
+  #5271CC
+*/
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body, html{
+    background-color: #0d1a60 ;
+    height: 100vh;
+    width: 100vw;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+section#login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden; /* Tudo que está fora da borda fica escondido*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.708);
+
+    transition: width 1s, height 1s;
+    transition-timing-function: ease;
+}
+
+section#login > div#imagem {
+    background: url('../imagens/pexels-scott-webb-305816.jpg') no-repeat;
+    height: 200px;
+    background-size: cover;
+    background-position: center top;
+}
+
+section#login > div#formulario{
+    padding: 10px;
+    display: block;
+}
+
+div#formulario > h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formulario> p{
+    font-size: 0.8em;
+}
