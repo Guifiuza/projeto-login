@@ -1,30 +1,29 @@
 @charset "UTF-8";
 
-/*#0D1A60
-  #0858A3
-  #5271CC
-*/
-*{
+/* ========================
+   Estilos Gerais (mobile first)
+======================== */
+
+* {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
 
-body, html{
-    background-color: #0d1a60 ;
+body, html {
+    background-color: #0d1a60;
     height: 100vh;
     width: 100vw;
 }
 
-main{
+main {
     position: relative;
     height: 100vh;
     width: 100vw;
-
 }
 
-section#login{
+section#login {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -33,10 +32,8 @@ section#login{
     width: 250px;
     height: 515px;
     border-radius: 20px;
-    overflow: hidden; /* Tudo que está fora da borda fica escondido*/
+    overflow: hidden; /* Tudo que está fora da borda fica escondido */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.708);
-
-    
     transition: width 1s, height 1s;
     transition-timing-function: ease;
 }
@@ -48,21 +45,17 @@ section#login > div#imagem {
     background-position: center top;
 }
 
-section#login > div#formulario{
+section#login > div#formulario {
     padding: 10px;
     display: block;
 }
 
-div#formulario > h1{
+div#formulario > h1 {
     text-align: center;
     margin-bottom: 10px;
 }
 
-div#formulario> p{
-    font-size: 0.8em;
-}
-
-div#formulario > p{
+div#formulario > p {
     font-size: 0.8em;
 }
 
@@ -75,7 +68,7 @@ form > div.campo {
     border-radius: 5px;
 }
 
-div.campo > label{
+div.campo > label {
     display: none;
 }
 
@@ -94,7 +87,6 @@ div.campo > input {
     border: 0px;
     padding: 4px;
     border-radius: 8px;
-    padding: 4px;
 }
 
 form > input[type=submit] {
@@ -102,9 +94,8 @@ form > input[type=submit] {
     font-size: 1em;
     width: 100%;
     height: 40px;
-    background-color:white ;
+    background-color: white;
     color: #07114e;
-    border: none;
     border: 1px solid #070064;
     border-radius: 8px;
     margin: 5px 0px;
@@ -114,7 +105,6 @@ form > input[type=submit]:hover {
     background-color: #07114e;
     color: white;
     cursor: pointer;
-
 }
 
 form > a.botao {
@@ -132,11 +122,71 @@ form > a.botao {
     text-decoration: none;
 }
 
-form > a.botao:hover{
+form > a.botao:hover {
     background-color: #16a7ea;
     color: white;
 }
 
 form > a.botao > span {
     font-size: .8em;
+}
+
+/* ========================
+   Responsividade
+======================== */
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    body {
+        background-image: linear-gradient(to top, #0D1A60, #0858A3, #5271CC);
+    }
+
+    section#login {
+        width: 80vw;
+        height: 280px;
+    }
+
+    section#login > div#imagem {
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+
+    section#login > div#formulario {
+        float: right;
+        width: 70%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+    body {
+        background-image: linear-gradient(to top, #0D1A60, #0858A3, #5271CC);
+    }
+
+    section#login {
+        width: 950px;
+        height: 350px;
+    }
+
+    section#login > div#imagem {
+        float: right;
+        width: 50%;
+        height: 100%;
+    }
+
+    section#login > div#formulario {
+        float: left;
+        width: 50%;
+    }
+    
+    div#formulario > h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    div#formulario > p {
+        font-size: 1em;
+        margin: 20px 0px;
+    }
 }
