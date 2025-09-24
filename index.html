@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Página de Login</title>
@@ -9,8 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <!-- Importa o CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
+
 </head>
+
 <body>
     <main>
         <section id="login">
@@ -19,7 +23,7 @@
                 <h1>Login</h1>
                 <p>Seja bem-vindo(a) novamente. Faça login para acessar sua conta.</p>
 
-                <form action="login.php" method="post" autocomplete="on"> 
+                <form action="login.php" method="post" autocomplete="on">
                     <div class="campo">
                         <span class="material-symbols-outlined">person</span>
                         <input type="email" name="login" id="ilogin" placeholder="Seu e-mail" required maxlength="30">
@@ -35,9 +39,10 @@
                     <a href="esqueci.html" class="botao">
                         Esqueci a senha <span class="material-symbols-outlined">mail</span>
                     </a>
-                </form>  
+                </form>
             </div>
         </section>
     </main>
 </body>
+
 </html>
