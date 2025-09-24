@@ -26,24 +26,28 @@ section#login {
     transform: translate(-50%, -50%);
     background-color: white;
     width: 280px;
-    min-height: 520px; /* substitua height por min-height */
+    min-height: 520px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     transition: width 1s, min-height 1s;
     transition-timing-function: ease;
+    display: flex;
+    flex-direction: column; /* permite imagem + formulário */
 }
 
 /* Imagem */
 section#login > div#imagem {
     background: url('https://images.pexels.com/photos/305816/pexels-photo-305816.jpeg') no-repeat center center;
     background-size: cover;
-    height: 100%;
     width: 100%;
+    height: 200px; /* padrão mobile */
 }
 
+/* Formulário */
 section#login > div#formulario {
     padding: 20px;
+    flex: 1;
 }
 
 #formulario h1 {
@@ -134,41 +138,49 @@ form > a.botao > span {
 }
 
 /* ------------------------------ */
-/* 🔧 Adicionado para corrigir imagem no mobile */
+/* 🔧 Mobile (até 767px) */
 @media screen and (max-width: 767px) {
+    section#login {
+        width: 90%;
+        min-height: auto;
+    }
+
     #imagem {
         height: 200px;
         width: 100%;
+        display: block;
     }
 
     #formulario {
         padding: 20px;
     }
 }
-/* ------------------------------ */
 
-/* Responsivo - Tablet */
-@media screen and (min-width: 768px) and (max-width: 992px) {
+/* Tablet (768px a 992px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
     body {
         background-image: linear-gradient(to top, #0D1A60, #0858A3, #5271CC);
     }
 
     section#login {
         width: 80vw;
-        height: 300px;
+        height: 400px;
         display: flex;
+        flex-direction: row;
     }
 
     #imagem {
-        width: 30%;
+        width: 40%;
+        height: auto;
     }
 
     #formulario {
-        width: 70%;
+        width: 60%;
+        padding: 20px;
     }
 }
 
-/* Responsivo - Desktop */
+/* Desktop (992px em diante) */
 @media screen and (min-width: 992px) {
     body {
         background-image: linear-gradient(to top, #0D1A60, #0858A3, #5271CC);
@@ -176,16 +188,18 @@ form > a.botao > span {
 
     section#login {
         width: 900px;
-        height: 150px;
+        height: 500px;
         display: flex;
+        flex-direction: row;
     }
 
     #imagem {
         width: 40%;
+        height: 100%;
     }
 
     #formulario {
-        width: 50%;
+        width: 60%;
         padding: 40px;
     }
 
