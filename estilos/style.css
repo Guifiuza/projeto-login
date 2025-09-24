@@ -1,26 +1,22 @@
 @charset "UTF-8";
 
-/* ========================
-   Estilos Gerais (mobile first)
-======================== */
-
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
-body, html {
+html, body {
     background-color: #0d1a60;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
 }
 
 main {
-    position: relative;
     height: 100vh;
     width: 100vw;
+    position: relative;
 }
 
 section#login {
@@ -29,97 +25,102 @@ section#login {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    width: 250px;
-    height: 515px;
+    width: 280px;
+    height: 520px;
     border-radius: 20px;
-    overflow: hidden; /* Tudo que está fora da borda fica escondido */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.708);
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
     transition: width 1s, height 1s;
     transition-timing-function: ease;
 }
 
+/* Imagem */
 section#login > div#imagem {
-    background: url('../imagens/pexels-scott-webb-305816.jpg') no-repeat;
-    height: 200px;
+    background: url('https://images.pexels.com/photos/305816/pexels-photo-305816.jpeg') no-repeat center center;
     background-size: cover;
-    background-position: center top;
+    height: 100%;
+    width: 100%;
 }
 
 section#login > div#formulario {
-    padding: 10px;
-    display: block;
+    padding: 20px;
 }
 
-div#formulario > h1 {
+#formulario h1 {
     text-align: center;
     margin-bottom: 10px;
+    color: #07114e;
 }
 
-div#formulario > p {
-    font-size: 0.8em;
+#formulario p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-form > div.campo {
+form > .campo {
+    display: flex;
+    align-items: center;
     background-color: #070064;
-    border: 1px solid #070064;
-    display: block;
-    width: 100%;
-    height: 40px;
     border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 5px 10px;
 }
 
-div.campo > label {
-    display: none;
-}
-
-div.campo > span {
+.campo span {
     color: white;
-    font-size: 1.8em;
-    width: 40px;
-    padding: 5px;
+    font-size: 1.5em;
+    margin-right: 8px;
 }
 
-div.campo > input {
+.campo input {
+    flex: 1;
+    background-color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
     font-size: 1em;
-    width: calc(100% - 44px);
-    transform: translateY(-39px) translateX(44px); 
-    height: 100%;
-    border: 0px;
-    padding: 4px;
-    border-radius: 8px;
+    color: #333;
+}
+
+.campo input::placeholder {
+    color: #888;
+}
+
+.campo input:focus {
+    outline: 2px solid #16a7ea;
 }
 
 form > input[type=submit] {
-    display: block;
-    font-size: 1em;
     width: 100%;
     height: 40px;
-    background-color: white;
-    color: #07114e;
-    border: 1px solid #070064;
+    background-color: #07114e;
+    color: white;
+    font-size: 1em;
+    border: none;
     border-radius: 8px;
-    margin: 5px 0px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 form > input[type=submit]:hover {
-    background-color: #07114e;
-    color: white;
+    background-color: #16a7ea;
     cursor: pointer;
 }
 
 form > a.botao {
-    display: block;
-    text-align: center;
-    font-size: 1em;
-    width: 100%;
-    padding-top: 5px;
-    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
     height: 40px;
     background-color: white;
     color: #07114e;
     border: 1px solid #070064;
     border-radius: 5px;
     text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 form > a.botao:hover {
@@ -128,14 +129,11 @@ form > a.botao:hover {
 }
 
 form > a.botao > span {
-    font-size: .8em;
+    margin-left: 5px;
+    font-size: 1em;
 }
 
-/* ========================
-   Responsividade
-======================== */
-
-/* Tablet */
+/* Responsivo - Tablet */
 @media screen and (min-width: 768px) and (max-width: 992px) {
     body {
         background-image: linear-gradient(to top, #0D1A60, #0858A3, #5271CC);
@@ -143,22 +141,20 @@ form > a.botao > span {
 
     section#login {
         width: 80vw;
-        height: 280px;
+        height: 300px;
+        display: flex;
     }
 
-    section#login > div#imagem {
-        float: left;
+    #imagem {
         width: 30%;
-        height: 100%;
     }
 
-    section#login > div#formulario {
-        float: right;
+    #formulario {
         width: 70%;
     }
 }
 
-/* Desktop */
+/* Responsivo - Desktop */
 @media screen and (min-width: 992px) {
     body {
         background-image: linear-gradient(to top, #0D1A60, #0858A3, #5271CC);
@@ -167,26 +163,24 @@ form > a.botao > span {
     section#login {
         width: 950px;
         height: 350px;
+        display: flex;
     }
 
-    section#login > div#imagem {
-        float: right;
-        width: 50%;
-        height: 100%;
-    }
-
-    section#login > div#formulario {
-        float: left;
+    #imagem {
         width: 50%;
     }
-    
-    div#formulario > h1 {
-        text-align: center;
-        margin-bottom: 10px;
+
+    #formulario {
+        width: 50%;
+        padding: 40px;
     }
 
-    div#formulario > p {
+    #formulario h1 {
+        font-size: 1.8em;
+    }
+
+    #formulario p {
         font-size: 1em;
-        margin: 20px 0px;
+        margin: 20px 0;
     }
 }
